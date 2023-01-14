@@ -1,0 +1,28 @@
+﻿@model TsVote.Models.ViewsModelGene.StateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Nuevo</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="AddState">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CountryId" />
+
+            <partial name="_State"/>
+
+            <div class="form-group mt-2">
+                <button type="submit" class="btn btn-sm btn-outline-primary"><i class="bi bi-save-fill"></i> Guardar</button> |
+                <a asp-action="Details" asp-route-id="@Model.CountryId" class="btn btn-sm btn-outline-success"><i class="bi bi-chevron-double-left"></i> Retornar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

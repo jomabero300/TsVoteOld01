@@ -1,0 +1,21 @@
+﻿@model TsVote.Data.Entities.Gene.Country
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Realmente desea borrar este?</h3>
+<hr />
+
+<div>
+    <partial name="_CountryDetail" />
+
+    <form asp-action="Delete">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash-fill"></i> Borrar</button> |
+        <a asp-action="Index" class="btn btn-sm btn-outline-success"><i class="bi bi-chevron-double-left"></i> Retornar</a>
+
+    </form>
+</div>
